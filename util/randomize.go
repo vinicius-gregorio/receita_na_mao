@@ -19,5 +19,5 @@ func RandomString(length int) string {
 }
 
 func RandomName() string {
-	return RandomString(4)
+	return RandomString(999)
 }

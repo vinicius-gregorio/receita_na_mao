@@ -7,13 +7,12 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Aug 22 11:09:05 2022
+# Make data base, printed on Mon Aug 22 18:24:46 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -23,7 +22,7 @@ USERPROFILE = C:\Users\Gregorio
 # environment
 LOCALAPPDATA = C:\Users\Gregorio\AppData\Local
 # environment
-VSCODE_CWD = C:\Users\Gregorio\Documents\Dev\backend\simplebank
+VSCODE_CWD = C:\Users\Gregorio\AppData\Local\Programs\Microsoft VS Code
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -39,9 +38,7 @@ GOPATH = C:\Users\Gregorio\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_29468_RCFTLTWSWNLNFDSR
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_86600_QUBDNOTQMWYWVDFU
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -91,7 +88,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 29468
+VSCODE_PID = 86600
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -132,6 +129,8 @@ MAKEFILES :=
 PROMPT = $P$G
 # environment
 CHOCOLATEYLASTPATHUPDATE = 133038249710033101
+# environment
+GOROOT = C:\Program Files\Go
 # environment
 LOGONSERVER = \\DESKTOP-KSK027M
 # environment
@@ -177,7 +176,8 @@ GOMODCACHE = C:\Users\Gregorio\go\pkg\mod
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Commo 
+n Files
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
@@ -205,7 +205,7 @@ CHOCOLATEYTOOLSLOCATION = C:\tools
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
 # variable set hash-table stats:
-# Load=96/1024=9%, Rehash=0, Collisions=8/123=7%
+# Load=95/1024=9%, Rehash=0, Collisions=7/122=6%
 
 # Pattern-specific Variable Values
 
@@ -213,9 +213,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (key c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao, mtime 1661177345): 9 files, no impossibilities.
+# . (key c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao, mtime 1661177853): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -229,12 +229,12 @@ migrationsup:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 11):
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-22 10:03:04
+#  Last modified 2022-08-22 11:31:57
 #  File has been updated.
 #  Successfully updated.
 
@@ -260,7 +260,7 @@ migrationsdown:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 17):
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down
 
 server:
 #  Phony target (prerequisite of .PHONY).
@@ -312,7 +312,7 @@ migrationsdown1:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 20):
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down 1
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down 1
 
 postgres:
 #  Phony target (prerequisite of .PHONY).
@@ -328,7 +328,7 @@ migrationsup1:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 14):
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up 1
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up 1
 
 createdb:
 #  Phony target (prerequisite of .PHONY).
@@ -351,12 +351,13 @@ createdb:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 211 B / avg = 8 B
-# current buf: size = 8174 B / used = 211 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 216 B / avg = 8 B
+# current buf: size = 8174 B / used = 216 B / count = 26 / avg = 8 B
 
-# strcache performance: lookups = 53 / hit rate = 52%
+# strcache per 
+formance: lookups = 54 / hit rate = 51%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/53=0%
-# Finished Make data base on Mon Aug 22 11:09:05 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/54=0%
+# Finished Make data base on Mon Aug 22 18:24:46 2022
 
  
