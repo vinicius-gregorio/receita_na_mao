@@ -7,7 +7,7 @@ CREATE TABLE "category" (
 CREATE TABLE "recipes" (
   "id" bigserial PRIMARY KEY,
   "name" varchar NOT NULL,
-  "categories" varchar[] NOT NULL,
+  "categories" varchar[],
   "description" varchar NOT NULL,
   "prepare_method" varchar NOT NULL,
   "ingredients" varchar[] NOT NULL,
@@ -25,4 +25,5 @@ CREATE TABLE "users" (
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
-ALTER TABLE "recipes" ADD FOREIGN KEY ("categories") REFERENCES "category" ("name");
+ALTER TABLE recipes 
+    ALTER COLUMN categories SET DEFAULT array[]::varchar[];

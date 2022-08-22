@@ -8,16 +8,16 @@ dropdb:
 	docker exec -it postgres dropdb --username=postgres receita_na_mao
 
 migrationsup:
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up
 
 migrationsup1:
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up 1
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose up 1
 
 migrationsdown:
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down
 
 migrationsdown1:
-	migrate -path db/migrations -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down 1
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down 1
 
 sqlcgenerate:
 	docker run --rm -v "%cd%:/src" -w /src kjconroy/sqlc generate
