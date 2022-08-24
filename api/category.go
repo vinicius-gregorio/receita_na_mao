@@ -25,3 +25,14 @@ func (server *Server) createCategory(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, category)
 }
+
+func (server *Server) getAllCategories(ctx *gin.Context) {
+
+	categories, err := server.store.ListCategories(ctx)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	ctx.JSON(http.StatusOK, categories)
+}

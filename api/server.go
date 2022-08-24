@@ -21,7 +21,9 @@ func NewServer(store db.Store) *Server {
 func (server *Server) setupRouter() {
 	router := gin.Default()
 
+	//category
 	router.POST("/category", server.createCategory)
+	router.GET("/category", server.getAllCategories)
 
 	server.router = router
 }
