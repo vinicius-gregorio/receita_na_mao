@@ -1,0 +1,5 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao'
+docker run --name postgres --network bank-network  -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres
+make: Leaving directory 'c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao'
+ 
