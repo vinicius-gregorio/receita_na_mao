@@ -24,6 +24,7 @@ func (server *Server) setupRouter() {
 	//category
 	router.POST("/category", server.createCategory)
 	router.GET("/category", server.getAllCategories)
+	router.PUT("/category/:id", server.updateCategory)
 
 	server.router = router
 }
