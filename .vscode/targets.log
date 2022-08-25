@@ -7,8 +7,9 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Wed Aug 24 09:06:52 2022
+# Make data base, printed on Thu Aug 25 06:27:20 2022
 
 # Variables
 
@@ -39,7 +40,7 @@ GOPATH = C:\Users\Gregorio\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_44516_MQCASOXLHLZNJCJZ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15056_HOSIQEZXYNAIZDUW
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -91,7 +92,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 44516
+VSCODE_PID = 15056
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -197,7 +198,8 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+.FEATURE 
+S := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
 PROCESSOR_REVISION = 9702
 # environment
@@ -213,9 +215,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (key c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao, mtime 1661211375): 11 files, no impossibilities.
+# . (key c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao, mtime 1661370627): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -234,7 +236,7 @@ migrationsup:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-22 11:31:57
+#  Last modified 2022-08-24 23:30:11
 #  File has been updated.
 #  Successfully updated.
 
@@ -351,12 +353,12 @@ createdb:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 220 B / avg = 8 B
-# current buf: size = 8174 B / used = 220 B / count = 27 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 228 B / avg = 8 B
+# current buf: size = 8174 B / used = 228 B / count = 28 / avg = 8 B
 
-# strcache performance: lookups = 55 / hit rate = 50%
+# strcache performance: lookups = 56 / hit rate = 50%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=0/55=0%
-# Finished Make data base on Wed Aug 24 09:06:52 2022
+# Load=28/8192=0%, Rehash=0, Collisions=0/56=0%
+# Finished Make data base on Thu Aug 25 06:27:20 2022
 
  

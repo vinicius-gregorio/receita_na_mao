@@ -6,8 +6,7 @@ INSERT INTO recipes (
     prepare_method,
     ingredients,
     rating,
-    preparation_time,
-
+    preparation_time
 ) VALUES (
     $1, $2, $3, $4, $5, $6, $7
 ) RETURNING *;
@@ -27,14 +26,13 @@ OFFSET $2;
 -- name: UpdateRecipe :one
 UPDATE recipes
 SET
-name,
-    categories = $2,
-    description = $3,
-    prepare_method = $4,
-    ingredients = $5,
-    rating = $6,
-    preparation_time = $7,
-
+    name = $2,
+    categories = $3,
+    description = $4,
+    prepare_method = $5,
+    ingredients = $6,
+    rating = $7,
+    preparation_time = $8
 WHERE id = $1
 RETURNING *
 ;
