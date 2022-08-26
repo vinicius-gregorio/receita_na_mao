@@ -7,9 +7,8 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Aug 25 06:27:20 2022
+# Make data base, printed on Fri Aug 26 11:07:36 2022
 
 # Variables
 
@@ -24,7 +23,7 @@ USERPROFILE = C:\Users\Gregorio
 # environment
 LOCALAPPDATA = C:\Users\Gregorio\AppData\Local
 # environment
-VSCODE_CWD = C:\Users\Gregorio\AppData\Local\Programs\Microsoft VS Code
+VSCODE_CWD = C:\Users\Gregorio\Documents\Dev\backend\receita_na_mao
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -40,7 +39,7 @@ GOPATH = C:\Users\Gregorio\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15056_HOSIQEZXYNAIZDUW
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9100_ZTCOMQRZFEGUSRYJ
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -92,7 +91,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 15056
+VSCODE_PID = 9100
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -100,7 +99,8 @@ VSCODE_PID = 15056
 # automatic
 <D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages" 
+:{},"_languagePackSupport":true}
 # default
 MAKE_HOST := Windows32
 # environment
@@ -198,8 +198,7 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
-.FEATURE 
-S := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
 PROCESSOR_REVISION = 9702
 # environment
@@ -262,7 +261,8 @@ migrationsdown:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 17):
-	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslm 
+ode=disable" -verbose down
 
 server:
 #  Phony target (prerequisite of .PHONY).
@@ -359,6 +359,6 @@ createdb:
 # strcache performance: lookups = 56 / hit rate = 50%
 # hash-table stats:
 # Load=28/8192=0%, Rehash=0, Collisions=0/56=0%
-# Finished Make data base on Thu Aug 25 06:27:20 2022
+# Finished Make data base on Fri Aug 26 11:07:36 2022
 
  

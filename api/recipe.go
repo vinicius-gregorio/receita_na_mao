@@ -43,3 +43,35 @@ func (server *Server) createRecipe(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, recipe)
 }
+
+type listRecipesRequest struct {
+	//Query PARAMS
+	PAGEID   int32 `form:"page_id" binding:"required,min=1"`
+	PAGESize int32 `form:"page_size" binding:"required,min=5,max=10"`
+}
+
+func (server *Server) ListRecipes(ctx *gin.Context) {
+
+	var req listRecipesRequest
+	if err := ctx.ShouldBindQuery(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	args := db.ListRecipesParams{
+		Limit:  req.PAGESize,
+		Offset: (req.PAGEID - 1) * req.PAGESize,
+	}
+	recipes, err := server.store.ListRecipes(ctx, args)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			ctx.JSON(http.StatusNotFound, errorResponse(err))
+			return
+		}
+
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	ctx.JSON(http.StatusOK, recipes)
+}
