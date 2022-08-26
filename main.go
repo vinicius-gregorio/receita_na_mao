@@ -7,17 +7,17 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/vinicius-gregorio/receita_na_mao/api"
 	db "github.com/vinicius-gregorio/receita_na_mao/db/sqlc"
-)
-
-const (
-	DBDriver      = "postgres"
-	DBSource      = "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable"
-	serverAddress = "0.0.0.0:8080"
+	"github.com/vinicius-gregorio/receita_na_mao/util"
 )
 
 func main() {
 
-	conn, err := sql.Open(DBDriver, DBSource)
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal("Cannot load configurations", err)
+	}
+
+	conn, err := sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
 		log.Fatal("Error connecting to the database", err)
 	}
@@ -25,7 +25,7 @@ func main() {
 	store := db.NewStore(conn)
 	server := api.NewServer(store)
 
-	server.Start(serverAddress)
+	server.Start(config.ServerAddress)
 	if err != nil {
 		log.Fatal("Error starting the server", err)
 	}
