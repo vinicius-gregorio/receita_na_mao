@@ -7,22 +7,23 @@ import (
 	"testing"
 
 	_ "github.com/lib/pq"
-)
-
-const (
-	DBDriver = "postgres"
-	DBSource = "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable"
+	"github.com/vinicius-gregorio/receita_na_mao/util"
 )
 
 var testQueries *Queries
+var testDB *sql.DB
 
 func TestMain(m *testing.M) {
 
-	conn, err := sql.Open(DBDriver, DBSource)
+	config, err := util.LoadConfig("../..")
+	if err != nil {
+		log.Fatal("Cannot load configurations", err)
+	}
+
+	testDB, err = sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
 		log.Fatal("Error connecting to the database", err)
 	}
-	testQueries = New(conn)
 
 	os.Exit(m.Run())
 
