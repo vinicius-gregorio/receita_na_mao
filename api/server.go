@@ -14,6 +14,7 @@ type Server struct {
 // NewServer creates a new HTTP server and set up routing.
 func NewServer(store db.Store) *Server {
 	server := &Server{store: store}
+
 	server.setupRouter()
 	return server
 }
