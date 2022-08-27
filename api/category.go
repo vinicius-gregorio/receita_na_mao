@@ -1,6 +1,7 @@
 package api
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -31,6 +32,7 @@ func (server *Server) getAllCategories(ctx *gin.Context) {
 
 	categories, err := server.store.ListCategories(ctx)
 	if err != nil {
+		fmt.Printf(err.Error())
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
 	}
