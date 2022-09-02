@@ -139,6 +139,53 @@ func (q *Queries) ListRecipes(ctx context.Context, arg ListRecipesParams) ([]Rec
 	return items, nil
 }
 
+const listRecipesByCategory = `-- name: ListRecipesByCategory :many
+SELECT id, name, categories, description, prepare_method, ingredients, rating, preparation_time, created_at FROM recipes
+WHERE categories @> $3
+ORDER BY name
+LIMIT $1
+OFFSET $2
+`
+
+type ListRecipesByCategoryParams struct {
+	Limit      int32
+	Offset     int32
+	Categories []string
+}
+
+func (q *Queries) ListRecipesByCategory(ctx context.Context, arg ListRecipesByCategoryParams) ([]Recipe, error) {
+	rows, err := q.db.QueryContext(ctx, listRecipesByCategory, arg.Limit, arg.Offset, pq.Array(arg.Categories))
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	items := []Recipe{}
+	for rows.Next() {
+		var i Recipe
+		if err := rows.Scan(
+			&i.ID,
+			&i.Name,
+			pq.Array(&i.Categories),
+			&i.Description,
+			&i.PrepareMethod,
+			pq.Array(&i.Ingredients),
+			&i.Rating,
+			&i.PreparationTime,
+			&i.CreatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
 const updateRecipe = `-- name: UpdateRecipe :one
 UPDATE recipes
 SET
