@@ -23,6 +23,14 @@ LIMIT $1
 OFFSET $2;
 ;
 
+-- name: ListRecipesByCategory :many
+SELECT * FROM recipes
+WHERE categories @> $3
+ORDER BY name
+LIMIT $1
+OFFSET $2;
+;
+
 -- name: UpdateRecipe :one
 UPDATE recipes
 SET

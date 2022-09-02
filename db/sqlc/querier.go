@@ -17,6 +17,7 @@ type Querier interface {
 	GetRecipeById(ctx context.Context, id int64) (Recipe, error)
 	ListCategories(ctx context.Context) ([]Category, error)
 	ListRecipes(ctx context.Context, arg ListRecipesParams) ([]Recipe, error)
+	ListRecipesByCategory(ctx context.Context, arg ListRecipesByCategoryParams) ([]Recipe, error)
 	UpdateCategory(ctx context.Context, arg UpdateCategoryParams) (Category, error)
 	UpdateRecipe(ctx context.Context, arg UpdateRecipeParams) (Recipe, error)
 }
