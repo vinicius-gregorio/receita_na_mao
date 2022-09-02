@@ -8,12 +8,10 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 26 11:07:36 2022
+# Make data base, printed on Thu Sep 01 21:04:14 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -23,7 +21,7 @@ USERPROFILE = C:\Users\Gregorio
 # environment
 LOCALAPPDATA = C:\Users\Gregorio\AppData\Local
 # environment
-VSCODE_CWD = C:\Users\Gregorio\Documents\Dev\backend\receita_na_mao
+VSCODE_CWD = C:\Users\Gregorio\AppData\Local\Programs\Microsoft VS Code
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -39,9 +37,7 @@ GOPATH = C:\Users\Gregorio\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9100_ZTCOMQRZFEGUSRYJ
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_34300_LACVVIAGCFWXFHYL
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -73,7 +69,7 @@ INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Commu
 # makefile
 CURDIR := c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -91,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 9100
+VSCODE_PID = 34300
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -99,8 +95,7 @@ VSCODE_PID = 9100
 # automatic
 <D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages" 
-:{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := Windows32
 # environment
@@ -206,7 +201,7 @@ CHOCOLATEYTOOLSLOCATION = C:\tools
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
 # variable set hash-table stats:
-# Load=96/1024=9%, Rehash=0, Collisions=8/123=7%
+# Load=94/1024=9%, Rehash=0, Collisions=7/121=6%
 
 # Pattern-specific Variable Values
 
@@ -214,9 +209,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
 
 # Directories
 
-# . (key c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao, mtime 1661370627): 12 files, no impossibilities.
+# . (key c:/Users/Gregorio/Documents/Dev/backend/receita_na_mao, mtime 1661632053): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -261,8 +256,7 @@ migrationsdown:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 17):
-	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslm 
-ode=disable" -verbose down
+	migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5432/receita_na_mao?sslmode=disable" -verbose down
 
 server:
 #  Phony target (prerequisite of .PHONY).
@@ -353,12 +347,13 @@ createdb:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 228 B / avg = 8 B
-# current buf: size = 8174 B / used = 228 B / count = 28 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 236 B / avg = 8 B
+# current buf: size = 8174 B / used = 236 B / count = 29 / avg = 8 B
 
-# strcache performance: lookups = 56 / hit rate = 50%
-# hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=0/56=0%
-# Finished Make data base on Fri Aug 26 11:07:36 2022
+# strcache performance: lookups = 57 / hit rate = 49%
+# hash 
+-table stats:
+# Load=29/8192=0%, Rehash=0, Collisions=0/57=0%
+# Finished Make data base on Thu Sep 01 21:04:14 2022
 
  

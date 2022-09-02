@@ -30,6 +30,7 @@ func (server *Server) setupRouter() {
 	//recipe
 	router.POST("/recipe", server.createRecipe)
 	router.GET("/recipe", server.ListRecipes)
+	router.GET("/recipe/categories", server.ListRecipesByCategory)
 	router.PUT("/recipe/:id", server.updateCategory)
 
 	server.router = router
